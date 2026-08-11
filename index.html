@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 周刊 · 本周热点精选</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#8b949e; --accent:#58a6ff; --accent2:#3fb950; --chip:#21262d;
+    --orange:#f0883e; --purple:#a371f7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.65;padding:0 20px 60px;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+  .hero{padding:44px 0 32px;border-bottom:1px solid var(--border);margin-bottom:28px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;
+    font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px;
+    background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);
+    padding:5px 12px;border-radius:999px;
+  }
+  .eyebrow .pulse{
+    width:7px;height:7px;border-radius:50%;background:var(--accent2);
+    box-shadow:0 0 0 0 rgba(63,185,80,.5);animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(63,185,80,.5)}
+    70%{box-shadow:0 0 0 6px rgba(63,185,80,0)}
+    100%{box-shadow:0 0 0 0 rgba(63,185,80,0)}
+  }
+  h1{font-size:34px;font-weight:800;letter-spacing:-.5px;line-height:1.2}
+  h1 .dot{color:var(--accent)}
+  .tagline{font-size:17px;color:var(--muted);margin-top:12px;max-width:760px}
+  .intro-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px;
+  }
+  .intro-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .intro-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .intro-card h3 .icon{font-size:16px}
+  .intro-card p{font-size:13.2px;color:var(--muted)}
+  .stats{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;align-items:center}
+  .stat{
+    background:var(--chip);border:1px solid var(--border);border-radius:10px;padding:10px 16px;
+    display:flex;flex-direction:column;gap:2px;
+  }
+  .stat .num{font-size:18px;font-weight:800;color:var(--accent)}
+  .stat .label{font-size:11.5px;color:var(--muted)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 22px}
+  .search{
+    flex:1;min-width:200px;background:var(--card);border:1px solid var(--border);
+    color:var(--text);padding:11px 16px;border-radius:10px;font-size:14px;outline:none;
+  }
+  .search:focus{border-color:var(--accent)}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filter{
+    background:var(--chip);border:1px solid var(--border);color:var(--muted);
+    padding:7px 14px;border-radius:999px;font-size:13px;cursor:pointer;transition:.15s;
+  }
+  .filter:hover{color:var(--text);border-color:var(--accent)}
+  .filter.active{background:var(--accent);color:#0d1117;border-color:var(--accent);font-weight:600}
+  .section-title{
+    font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px;display:flex;
+    align-items:center;justify-content:space-between;gap:10px;
+  }
+  .section-title .muted{font-weight:400;color:var(--muted);font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:18px;display:flex;flex-direction:column;gap:10px;text-decoration:none;
+    color:inherit;transition:.18s;position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 24px rgba(88,166,255,.12)}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .repo{font-size:16px;font-weight:700;color:var(--accent);word-break:break-all}
+  .repo .owner{color:var(--muted);font-weight:500}
+  .desc{font-size:13.5px;color:var(--text);opacity:.92;flex:1;min-height:66px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--muted)}
+  .lang{display:flex;align-items:center;gap:5px}
+  .lang .lc{width:10px;height:10px;border-radius:50%;background:var(--accent2)}
+  .star{color:var(--accent2);font-weight:600}
+  .wk{color:var(--orange);font-weight:600}
+  .cat{font-size:11px;color:var(--muted);background:var(--chip);border:1px solid var(--border);padding:2px 9px;border-radius:999px}
+  .arrow{position:absolute;top:14px;right:14px;color:var(--muted);font-size:14px;opacity:0;transition:.18s}
+  .card:hover .arrow{opacity:1;color:var(--accent)}
+  .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px}
+  footer{margin-top:44px;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--border);padding-top:24px}
+  footer a{color:var(--accent);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow"><span class="pulse"></span>GitHub Trending 周刊</div>
+    <h1>本周 GitHub 热点精选<span class="dot">.</span></h1>
+    <p class="tagline">
+      自动聚合 GitHub 周榜热门仓库，用中文提炼项目背景、核心能力与本周热度。
+      帮你快速判断哪些项目值得深入研究，点一下即可跳转到 GitHub 查看源码。
+    </p>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3><span class="icon">🎯</span>数据来源</h3>
+        <p>直接采集 <a href="https://www.github.com/trending?since=weekly" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">GitHub Trending 周榜</a>，每周更新一次，聚焦增长最快的开源项目。</p>
+      </div>
+      <div class="intro-card">
+        <h3><span class="icon">📦</span>筛选逻辑</h3>
+        <p>按本周新增 Star 排序，兼顾语言多样性（Rust / Python / Go / TypeScript 等）和实用性，去掉纯娱乐或重复项目。</p>
+      </div>
+      <div class="intro-card">
+        <h3><span class="icon">🔍</span>使用方式</h3>
+        <p>用顶部搜索框快速定位；点击分类筛选只看 AI 智能体、开发工具或学习资源；点击卡片直达 GitHub 仓库。</p>
+      </div>
+      <div class="intro-card">
+        <h3><span class="icon">⚡</span>适用人群</h3>
+        <p>适合想了解开源风向的开发者、架构师、技术管理者，以及准备面试 / 学习 AI / 系统设计的人群。</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">12</div><div class="label">本期精选仓库</div></div>
+      <div class="stat"><div class="num">7</div><div class="label">覆盖语言/技术栈</div></div>
+      <div class="stat"><div class="num">+48.2k</div><div class="label">本周新增 Star 总计</div></div>
+      <div class="stat"><div class="num">2026-08-11</div><div class="label">最近整理日期</div></div>
+    </div>
+  </section>
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="搜索仓库名 / 描述 / 语言…" oninput="render()">
+    <div class="filters" id="filters"></div>
+  </div>
+  <div class="section-title">
+    <span>精选仓库列表</span>
+    <span class="muted">点击卡片跳转 GitHub · 按本周新增 Star 排序</span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <footer>
+    由 GitHub Actions 自动整理 · 数据截至 <span>2026-08-11</span> ·
+    <a href="https://www.github.com/trending?since=weekly" target="_blank" rel="noopener">查看原始 GitHub Trending 周榜 ↗</a>
+  </footer>
+</div>
+<script>
+const repos = [
+  {
+    "owner": "zhaoxuya520",
+    "name": "reverse-skill",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端。主语言 PowerShell，总 Star 23,447，本周新增 8,182。",
+    "lang": "PowerShell",
+    "stars": 23447,
+    "week": 8182
+  },
+  {
+    "owner": "TencentCloud",
+    "name": "TencentDB-Agent-Memory",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.。主语言 TypeScript，总 Star 19,495，本周新增 7,555。",
+    "lang": "TypeScript",
+    "stars": 19495,
+    "week": 7555
+  },
+  {
+    "owner": "firecrawl",
+    "name": "pdf-inspector",
+    "cat": "开发工具",
+    "desc": "这是一个开发工具项目，Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.。主语言 Rust，总 Star 14,435，本周新增 7,143。",
+    "lang": "Rust",
+    "stars": 14435,
+    "week": 7143
+  },
+  {
+    "owner": "virgiliojr94",
+    "name": "book-to-skill",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.。主语言 Python，总 Star 20,085，本周新增 4,113。",
+    "lang": "Python",
+    "stars": 20085,
+    "week": 4113
+  },
+  {
+    "owner": "esengine",
+    "name": "DeepSeek-Reasonix",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.。主语言 Go，总 Star 33,769，本周新增 4,109。",
+    "lang": "Go",
+    "stars": 33769,
+    "week": 4109
+  },
+  {
+    "owner": "goauthentik",
+    "name": "authentik",
+    "cat": "开发工具",
+    "desc": "这是一个开发工具项目，The authentication glue you need.。主语言 Python，总 Star 24,529，本周新增 1,912。",
+    "lang": "Python",
+    "stars": 24529,
+    "week": 1912
+  },
+  {
+    "owner": "DataExpert-io",
+    "name": "data-engineer-handbook",
+    "cat": "学习资源",
+    "desc": "这是一份学习资源，This is a repo with links to everything you'd ever want to learn about data engineering。主语言 Jupyter Notebook，总 Star 43,617，本周新增 781。",
+    "lang": "Jupyter Notebook",
+    "stars": 43617,
+    "week": 781
+  },
+  {
+    "owner": "drawdb-io",
+    "name": "drawdb",
+    "cat": "开发工具",
+    "desc": "这是一个开发工具项目，Free, simple, and intuitive online database diagram editor and SQL generator.。主语言 JavaScript，总 Star 38,770，本周新增 503。",
+    "lang": "JavaScript",
+    "stars": 38770,
+    "week": 503
+  },
+  {
+    "owner": "lyogavin",
+    "name": "airllm",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，AirLLM 70B inference with single 4GB GPU。主语言 Jupyter Notebook，总 Star 30,607，本周新增 4,042。",
+    "lang": "Jupyter Notebook",
+    "stars": 30607,
+    "week": 4042
+  },
+  {
+    "owner": "microsoft",
+    "name": "AI-For-Beginners",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，12 Weeks, 24 Lessons, AI for All!。主语言 Jupyter Notebook，总 Star 64,455，本周新增 4,028。",
+    "lang": "Jupyter Notebook",
+    "stars": 64455,
+    "week": 4028
+  },
+  {
+    "owner": "huangruiteng",
+    "name": "loopx",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Lightweight loop engineering state kernel for long-running AI agent teams. Agent-loop agnostic across Codex, Claude Code, and other coding agents, with durable goals, quota-aware auto-wake, executable todos, evidence logs, and verifiable handoffs.。主语言 Python，总 Star 3,983，本周新增 2,947。",
+    "lang": "Python",
+    "stars": 3983,
+    "week": 2947
+  },
+  {
+    "owner": "Comfy-Org",
+    "name": "ComfyUI",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.。主语言 Python，总 Star 126,417，本周新增 2,842。",
+    "lang": "Python",
+    "stars": 126417,
+    "week": 2842
+  }
+];
+const langColors = {"Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6", "Rust": "#dea584", "Go": "#00ADD8", "Java": "#b07219", "C++": "#f34b7d", "C": "#555555", "C#": "#178600", "Ruby": "#701516", "Swift": "#F05138", "Kotlin": "#A97BFF", "Dart": "#00B4AB", "Shell": "#89e051", "PowerShell": "#012456", "Jupyter Notebook": "#DA5B0B", "HTML": "#e34c26", "CSS": "#563d7c", "Vue": "#41b883", "Svelte": "#ff3e00", "PHP": "#4F5D95", "Scala": "#c22d40", "Lua": "#000080", "Zig": "#ec915c", "Elixir": "#6e4a7e", "Haskell": "#5e5086"};
+const cats = ["全部", ...new Set(repos.map(r=>r.cat))];
+let activeCat = "全部";
+const filtersEl = document.getElementById("filters");
+cats.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="filter"+(c==="全部"?" active":"");
+  b.textContent=c;
+  b.onclick=()=>{activeCat=c;[...filtersEl.children].forEach(x=>x.classList.remove("active"));b.classList.add("active");render();};
+  filtersEl.appendChild(b);
+});
+function fmt(n){return n>=1000?(n/1000).toFixed(1)+"k":n;}
+function render(){
+  const q=document.getElementById("search").value.trim().toLowerCase();
+  const grid=document.getElementById("grid");
+  grid.innerHTML="";
+  const list=repos.filter(r=>{
+    const okCat = activeCat==="全部"||r.cat===activeCat;
+    const okQ = !q || (r.owner+r.name).toLowerCase().includes(q) || r.desc.toLowerCase().includes(q) || r.lang.toLowerCase().includes(q);
+    return okCat && okQ;
+  });
+  if(!list.length){grid.innerHTML='<div class="empty">没有匹配的结果</div>';return;}
+  list.forEach((r,i)=>{
+    const url="https://www.github.com/"+r.owner+"/"+r.name;
+    const a=document.createElement("a");
+    a.className="card";
+    a.href=url; a.target="_blank"; a.rel="noopener";
+    const lc = langColors[r.lang] || "#3fb950";
+    a.innerHTML=`
+      <span class="arrow">↗</span>
+      <div class="top">
+        <div class="repo"><span class="owner">${r.owner}/</span>${r.name}</div>
+      </div>
+      <div class="desc">${r.desc}</div>
+      <div class="meta">
+        <span class="cat">${r.cat}</span>
+        <span class="lang"><span class="lc" style="background:${lc}"></span>${r.lang}</span>
+        <span class="star">★ ${fmt(r.stars)}</span>
+        <span class="wk">本周 +${fmt(r.week)}</span>
+      </div>`;
+    grid.appendChild(a);
+  });
+}
+render();
+</script>
+</body>
+</html>
