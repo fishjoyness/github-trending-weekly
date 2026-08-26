@@ -121,9 +121,9 @@
     </div>
     <div class="stats">
       <div class="stat"><div class="num">12</div><div class="label">本期精选仓库</div></div>
-      <div class="stat"><div class="num">5</div><div class="label">覆盖语言/技术栈</div></div>
-      <div class="stat"><div class="num">+45.5k</div><div class="label">本周新增 Star 总计</div></div>
-      <div class="stat"><div class="num">2026-08-25</div><div class="label">最近整理日期</div></div>
+      <div class="stat"><div class="num">6</div><div class="label">覆盖语言/技术栈</div></div>
+      <div class="stat"><div class="num">+58.0k</div><div class="label">本周新增 Star 总计</div></div>
+      <div class="stat"><div class="num">2026-08-26</div><div class="label">最近整理日期</div></div>
     </div>
   </section>
   <div class="toolbar">
@@ -136,119 +136,119 @@
   </div>
   <div class="grid" id="grid"></div>
   <footer>
-    由 GitHub Actions 自动整理 · 数据截至 <span>2026-08-25</span> ·
+    由 GitHub Actions 自动整理 · 数据截至 <span>2026-08-26</span> ·
     <a href="https://www.github.com/trending?since=weekly" target="_blank" rel="noopener">查看原始 GitHub Trending 周榜 ↗</a>
   </footer>
 </div>
 <script>
 const repos = [
   {
+    "owner": "openai",
+    "name": "codex",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Lightweight coding agent that runs in your terminal。主语言 Rust，总 Star 118,211，本周新增 11,424。",
+    "lang": "Rust",
+    "stars": 118211,
+    "week": 11424
+  },
+  {
     "owner": "harry0703",
     "name": "MoneyPrinterTurbo",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.。主语言 Python，总 Star 116,009，本周新增 10,647。",
+    "desc": "这是一个 AI / 智能体方向的项目，利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.。主语言 Python，总 Star 116,513，本周新增 9,019。",
     "lang": "Python",
-    "stars": 116009,
-    "week": 10647
-  },
-  {
-    "owner": "public-apis",
-    "name": "public-apis",
-    "cat": "开发工具",
-    "desc": "这是一个开发工具项目，A collective list of free APIs。主语言 Python，总 Star 469,920，本周新增 7,069。",
-    "lang": "Python",
-    "stars": 469920,
-    "week": 7069
+    "stars": 116513,
+    "week": 9019
   },
   {
     "owner": "AprilNEA",
     "name": "OpenLogi",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.。主语言 Rust，总 Star 15,937，本周新增 7,019。",
+    "desc": "这是一个开发工具项目，⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.。主语言 Rust，总 Star 16,489，本周新增 7,648。",
     "lang": "Rust",
-    "stars": 15937,
-    "week": 7019
+    "stars": 16489,
+    "week": 7648
   },
   {
-    "owner": "volcengine",
-    "name": "OpenViking",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.。主语言 Python，总 Star 33,014，本周新增 4,048。",
+    "owner": "public-apis",
+    "name": "public-apis",
+    "cat": "开发工具",
+    "desc": "这是一个开发工具项目，A collective list of free APIs。主语言 Python，总 Star 470,498，本周新增 6,747。",
     "lang": "Python",
-    "stars": 33014,
-    "week": 4048
+    "stars": 470498,
+    "week": 6747
+  },
+  {
+    "owner": "freestylefly",
+    "name": "awesome-gpt-image-2",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中。主语言 JavaScript，总 Star 18,404，本周新增 5,329。",
+    "lang": "JavaScript",
+    "stars": 18404,
+    "week": 5329
   },
   {
     "owner": "basecamp",
     "name": "omarchy",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Beautiful, Modern & Opinionated Linux。主语言 Shell，总 Star 30,254，本周新增 3,934。",
+    "desc": "这是一个开发工具项目，Beautiful, Modern & Opinionated Linux。主语言 Shell，总 Star 31,364，本周新增 4,601。",
     "lang": "Shell",
-    "stars": 30254,
-    "week": 3934
+    "stars": 31364,
+    "week": 4601
   },
   {
-    "owner": "akitaonrails",
-    "name": "ai-memory",
+    "owner": "volcengine",
+    "name": "OpenViking",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors。主语言 Rust，总 Star 4,424，本周新增 2,520。",
-    "lang": "Rust",
-    "stars": 4424,
-    "week": 2520
+    "desc": "这是一个 AI / 智能体方向的项目，Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.。主语言 Python，总 Star 33,321，本周新增 4,211。",
+    "lang": "Python",
+    "stars": 33321,
+    "week": 4211
   },
   {
     "owner": "modular",
     "name": "modular",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，The Modular Platform (includes MAX & Mojo)。主语言 Mojo，总 Star 29,077，本周新增 2,285。",
+    "desc": "这是一个开发工具项目，The Modular Platform (includes MAX & Mojo)。主语言 Mojo，总 Star 29,161，本周新增 2,354。",
     "lang": "Mojo",
-    "stars": 29077,
-    "week": 2285
+    "stars": 29161,
+    "week": 2354
   },
   {
-    "owner": "jundot",
-    "name": "omlx",
+    "owner": "akitaonrails",
+    "name": "ai-memory",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar。主语言 Python，总 Star 20,558，本周新增 1,689。",
-    "lang": "Python",
-    "stars": 20558,
-    "week": 1689
-  },
-  {
-    "owner": "cordiverse",
-    "name": "cordis",
-    "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Meta-Framework of Spatiotemporal Composability。主语言 TypeScript，总 Star 7,420，本周新增 1,972。",
-    "lang": "TypeScript",
-    "stars": 7420,
-    "week": 1972
-  },
-  {
-    "owner": "cursor",
-    "name": "plugins",
-    "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Cursor plugin specification and official plugins。主语言 TypeScript，总 Star 4,995，本周新增 1,832。",
-    "lang": "TypeScript",
-    "stars": 4995,
-    "week": 1832
+    "desc": "这是一个 AI / 智能体方向的项目，Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors。主语言 Rust，总 Star 4,666，本周新增 2,073。",
+    "lang": "Rust",
+    "stars": 4666,
+    "week": 2073
   },
   {
     "owner": "apache",
     "name": "maka",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log.。主语言 TypeScript，总 Star 2,956，本周新增 1,313。",
+    "desc": "这是一个 AI / 智能体方向的项目，Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log.。主语言 TypeScript，总 Star 3,394，本周新增 1,769。",
     "lang": "TypeScript",
-    "stars": 2956,
-    "week": 1313
+    "stars": 3394,
+    "week": 1769
   },
   {
-    "owner": "Tencent",
-    "name": "AI-Infra-Guard",
+    "owner": "jundot",
+    "name": "omlx",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，A full-stack AI Red Teaming platform securing AI ecosystems via Agent Scan, Skills Scan, MCP scan, AI Infra scan and LLM jailbreak evaluation.。主语言 Python，总 Star 5,776，本周新增 1,212。",
+    "desc": "这是一个 AI / 智能体方向的项目，LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar。主语言 Python，总 Star 20,658，本周新增 1,432。",
     "lang": "Python",
-    "stars": 5776,
-    "week": 1212
+    "stars": 20658,
+    "week": 1432
+  },
+  {
+    "owner": "PostHog",
+    "name": "posthog",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP.。主语言 Python，总 Star 39,168，本周新增 1,426。",
+    "lang": "Python",
+    "stars": 39168,
+    "week": 1426
   }
 ];
 const langColors = {"Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6", "Rust": "#dea584", "Go": "#00ADD8", "Java": "#b07219", "C++": "#f34b7d", "C": "#555555", "C#": "#178600", "Ruby": "#701516", "Swift": "#F05138", "Kotlin": "#A97BFF", "Dart": "#00B4AB", "Shell": "#89e051", "PowerShell": "#012456", "Jupyter Notebook": "#DA5B0B", "HTML": "#e34c26", "CSS": "#563d7c", "Vue": "#41b883", "Svelte": "#ff3e00", "PHP": "#4F5D95", "Scala": "#c22d40", "Lua": "#000080", "Zig": "#ec915c", "Elixir": "#6e4a7e", "Haskell": "#5e5086"};
