@@ -120,10 +120,10 @@
       </div>
     </div>
     <div class="stats">
-      <div class="stat"><div class="num">10</div><div class="label">本期精选仓库</div></div>
-      <div class="stat"><div class="num">7</div><div class="label">覆盖语言/技术栈</div></div>
-      <div class="stat"><div class="num">+68.4k</div><div class="label">本周新增 Star 总计</div></div>
-      <div class="stat"><div class="num">2026-10-14</div><div class="label">最近整理日期</div></div>
+      <div class="stat"><div class="num">12</div><div class="label">本期精选仓库</div></div>
+      <div class="stat"><div class="num">8</div><div class="label">覆盖语言/技术栈</div></div>
+      <div class="stat"><div class="num">+288.5k</div><div class="label">本周新增 Star 总计</div></div>
+      <div class="stat"><div class="num">2026-10-15</div><div class="label">最近整理日期</div></div>
     </div>
   </section>
   <div class="toolbar">
@@ -136,101 +136,119 @@
   </div>
   <div class="grid" id="grid"></div>
   <footer>
-    由 GitHub Actions 自动整理 · 数据截至 <span>2026-10-14</span> ·
+    由 GitHub Actions 自动整理 · 数据截至 <span>2026-10-15</span> ·
     <a href="https://www.github.com/trending?since=weekly" target="_blank" rel="noopener">查看原始 GitHub Trending 周榜 ↗</a>
   </footer>
 </div>
 <script>
 const repos = [
   {
+    "owner": "morluto",
+    "name": "rea",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Reverse engineer anything with agents, from app behavior down to native binaries.。主语言 TypeScript，总 Star 250,477，本周新增 214,837。",
+    "lang": "TypeScript",
+    "stars": 250477,
+    "week": 214837
+  },
+  {
     "owner": "boykopovar",
     "name": "AnyPS5",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Tool for automatic PS5 executables porting to Linux and Windows。主语言 C++，总 Star 35,775，本周新增 28,663。",
+    "desc": "这是一个开发工具项目，Tool for automatic PS5 executables porting to Linux and Windows。主语言 C++，总 Star 37,470，本周新增 28,240。",
     "lang": "C++",
-    "stars": 35775,
-    "week": 28663
+    "stars": 37470,
+    "week": 28240
   },
   {
     "owner": "mattpocock",
     "name": "skills",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Skills for Real Engineers. Straight from my .agents directory.。主语言 Shell，总 Star 290,086，本周新增 11,955。",
+    "desc": "这是一个 AI / 智能体方向的项目，Skills for Real Engineers. Straight from my .agents directory.。主语言 Shell，总 Star 291,653，本周新增 12,292。",
     "lang": "Shell",
-    "stars": 290086,
-    "week": 11955
+    "stars": 291653,
+    "week": 12292
   },
   {
     "owner": "cathrynlavery",
     "name": "diagram-design",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.。主语言 HTML，总 Star 54,602，本周新增 9,867。",
+    "desc": "这是一个 AI / 智能体方向的项目，Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.。主语言 HTML，总 Star 55,491，本周新增 10,706。",
     "lang": "HTML",
-    "stars": 54602,
-    "week": 9867
+    "stars": 55491,
+    "week": 10706
+  },
+  {
+    "owner": "NationalSecurityAgency",
+    "name": "ghidra",
+    "cat": "安全 & 穿透",
+    "desc": "这是一个安全方向的项目，Ghidra is a software reverse engineering (SRE) framework。主语言 Java，总 Star 87,840，本周新增 5,613。",
+    "lang": "Java",
+    "stars": 87840,
+    "week": 5613
   },
   {
     "owner": "heygen-com",
     "name": "hyperframes",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Write HTML. Render video. Built for agents.。主语言 TypeScript，总 Star 63,039，本周新增 4,732。",
+    "desc": "这是一个 AI / 智能体方向的项目，Write HTML. Render video. Built for agents.。主语言 TypeScript，总 Star 63,901，本周新增 5,123。",
     "lang": "TypeScript",
-    "stars": 63039,
-    "week": 4732
+    "stars": 63901,
+    "week": 5123
   },
   {
     "owner": "tester-army",
     "name": "e2e",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Next generation e2e testing framework for web and mobile apps.。主语言 TypeScript，总 Star 10,223，本周新增 4,426。",
+    "desc": "这是一个开发工具项目，Next generation e2e testing framework for web and mobile apps.。主语言 TypeScript，总 Star 10,592，本周新增 3,505。",
     "lang": "TypeScript",
-    "stars": 10223,
-    "week": 4426
-  },
-  {
-    "owner": "thedotmack",
-    "name": "claude-mem",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More。主语言 TypeScript，总 Star 100,527，本周新增 3,587。",
-    "lang": "TypeScript",
-    "stars": 100527,
-    "week": 3587
-  },
-  {
-    "owner": "cursor",
-    "name": "plugins",
-    "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Cursor plugin specification and official plugins。主语言 TypeScript，总 Star 11,259，本周新增 1,141。",
-    "lang": "TypeScript",
-    "stars": 11259,
-    "week": 1141
+    "stars": 10592,
+    "week": 3505
   },
   {
     "owner": "flutter",
     "name": "flutter",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Flutter makes it easy and fast to build beautiful apps for mobile and beyond。主语言 Dart，总 Star 180,135，本周新增 967。",
+    "desc": "这是一个开发工具项目，Flutter makes it easy and fast to build beautiful apps for mobile and beyond。主语言 Dart，总 Star 180,194，本周新增 1,117。",
     "lang": "Dart",
-    "stars": 180135,
-    "week": 967
-  },
-  {
-    "owner": "earthtojake",
-    "name": "text-to-cad",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Give your agent CAD superpowers.。主语言 Python，总 Star 20,087，本周新增 2,173。",
-    "lang": "Python",
-    "stars": 20087,
-    "week": 2173
+    "stars": 180194,
+    "week": 1117
   },
   {
     "owner": "EpicGames",
     "name": "raddebugger",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，A native, user-mode, multi-process, graphical debugger.。主语言 C，总 Star 8,494，本周新增 857。",
+    "desc": "这是一个开发工具项目，A native, user-mode, multi-process, graphical debugger.。主语言 C，总 Star 8,550，本周新增 814。",
     "lang": "C",
-    "stars": 8494,
-    "week": 857
+    "stars": 8550,
+    "week": 814
+  },
+  {
+    "owner": "thedotmack",
+    "name": "claude-mem",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More。主语言 TypeScript，总 Star 100,825，本周新增 3,371。",
+    "lang": "TypeScript",
+    "stars": 100825,
+    "week": 3371
+  },
+  {
+    "owner": "earthtojake",
+    "name": "text-to-cad",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Give your agent CAD superpowers.。主语言 Python，总 Star 20,472，本周新增 1,994。",
+    "lang": "Python",
+    "stars": 20472,
+    "week": 1994
+  },
+  {
+    "owner": "twostraws",
+    "name": "SwiftUI-Agent-Skill",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，SwiftUI agent skill for Claude Code, Codex, and other AI tools.。主语言 N/A，总 Star 6,003，本周新增 930。",
+    "lang": "N/A",
+    "stars": 6003,
+    "week": 930
   }
 ];
 const langColors = {"Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6", "Rust": "#dea584", "Go": "#00ADD8", "Java": "#b07219", "C++": "#f34b7d", "C": "#555555", "C#": "#178600", "Ruby": "#701516", "Swift": "#F05138", "Kotlin": "#A97BFF", "Dart": "#00B4AB", "Shell": "#89e051", "PowerShell": "#012456", "Jupyter Notebook": "#DA5B0B", "HTML": "#e34c26", "CSS": "#563d7c", "Vue": "#41b883", "Svelte": "#ff3e00", "PHP": "#4F5D95", "Scala": "#c22d40", "Lua": "#000080", "Zig": "#ec915c", "Elixir": "#6e4a7e", "Haskell": "#5e5086"};
