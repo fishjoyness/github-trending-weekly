@@ -120,10 +120,10 @@
       </div>
     </div>
     <div class="stats">
-      <div class="stat"><div class="num">12</div><div class="label">本期精选仓库</div></div>
-      <div class="stat"><div class="num">6</div><div class="label">覆盖语言/技术栈</div></div>
-      <div class="stat"><div class="num">+70.8k</div><div class="label">本周新增 Star 总计</div></div>
-      <div class="stat"><div class="num">2026-11-14</div><div class="label">最近整理日期</div></div>
+      <div class="stat"><div class="num">11</div><div class="label">本期精选仓库</div></div>
+      <div class="stat"><div class="num">5</div><div class="label">覆盖语言/技术栈</div></div>
+      <div class="stat"><div class="num">+61.5k</div><div class="label">本周新增 Star 总计</div></div>
+      <div class="stat"><div class="num">2026-11-15</div><div class="label">最近整理日期</div></div>
     </div>
   </section>
   <div class="toolbar">
@@ -136,119 +136,110 @@
   </div>
   <div class="grid" id="grid"></div>
   <footer>
-    由 GitHub Actions 自动整理 · 数据截至 <span>2026-11-14</span> ·
+    由 GitHub Actions 自动整理 · 数据截至 <span>2026-11-15</span> ·
     <a href="https://www.github.com/trending?since=weekly" target="_blank" rel="noopener">查看原始 GitHub Trending 周榜 ↗</a>
   </footer>
 </div>
 <script>
 const repos = [
   {
+    "owner": "meta",
+    "name": "astryx",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，An open source design system that's fully customizable and agent ready。主语言 TypeScript，总 Star 28,346，本周新增 13,660。",
+    "lang": "TypeScript",
+    "stars": 28346,
+    "week": 13660
+  },
+  {
     "owner": "sherlock-project",
     "name": "sherlock",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Hunt down social media accounts by username across social networks。主语言 Python，总 Star 111,357，本周新增 13,364。",
+    "desc": "这是一个开发工具项目，Hunt down social media accounts by username across social networks。主语言 Python，总 Star 111,969，本周新增 12,401。",
     "lang": "Python",
-    "stars": 111357,
-    "week": 13364
-  },
-  {
-    "owner": "cloudflare",
-    "name": "security-audit-skill",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings。主语言 JavaScript，总 Star 72,100，本周新增 8,829。",
-    "lang": "JavaScript",
-    "stars": 72100,
-    "week": 8829
+    "stars": 111969,
+    "week": 12401
   },
   {
     "owner": "milind-soni",
     "name": "OpenMausBot",
     "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Open-source Grok Bot alternative with a virtual machine that bots can use。主语言 TypeScript，总 Star 22,350，本周新增 7,763。",
+    "desc": "这是一个开发工具项目，Open-source Grok Bot alternative with a virtual machine that bots can use。主语言 TypeScript，总 Star 22,931，本周新增 6,413。",
     "lang": "TypeScript",
-    "stars": 22350,
-    "week": 7763
-  },
-  {
-    "owner": "mattpocock",
-    "name": "skills",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Skills for Real Engineers. Straight from my .agents directory.。主语言 Shell，总 Star 323,998，本周新增 7,599。",
-    "lang": "Shell",
-    "stars": 323998,
-    "week": 7599
+    "stars": 22931,
+    "week": 6413
   },
   {
     "owner": "anthropics",
     "name": "skills",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Public repository for Agent Skills。主语言 Python，总 Star 194,267，本周新增 6,169。",
+    "desc": "这是一个 AI / 智能体方向的项目，Public repository for Agent Skills。主语言 Python，总 Star 194,805，本周新增 6,220。",
     "lang": "Python",
-    "stars": 194267,
-    "week": 6169
+    "stars": 194805,
+    "week": 6220
   },
   {
     "owner": "google",
     "name": "elephant-goldfish-model",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Open-source plugin for designing and reviewing software with agents。主语言 Python，总 Star 18,747，本周新增 5,560。",
+    "desc": "这是一个 AI / 智能体方向的项目，Open-source plugin for designing and reviewing software with agents。主语言 Python，总 Star 19,334，本周新增 5,539。",
     "lang": "Python",
-    "stars": 18747,
-    "week": 5560
-  },
-  {
-    "owner": "zed-industries",
-    "name": "zed",
-    "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.。主语言 Rust，总 Star 94,988，本周新增 2,117。",
-    "lang": "Rust",
-    "stars": 94988,
-    "week": 2117
-  },
-  {
-    "owner": "google-deepmind",
-    "name": "mujoco",
-    "cat": "开发工具",
-    "desc": "这是一个开发工具项目，Multi-Joint dynamics with Contact. A general purpose physics simulator.。主语言 C++，总 Star 17,910，本周新增 1,764。",
-    "lang": "C++",
-    "stars": 17910,
-    "week": 1764
-  },
-  {
-    "owner": "vercel-labs",
-    "name": "agent-desktop",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Computer use CLI for AI agents。主语言 Rust，总 Star 23,462，本周新增 5,408。",
-    "lang": "Rust",
-    "stars": 23462,
-    "week": 5408
+    "stars": 19334,
+    "week": 5539
   },
   {
     "owner": "vercel-labs",
     "name": "agent-browser",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Browser automation CLI for AI agents。主语言 Rust，总 Star 50,846，本周新增 4,360。",
+    "desc": "这是一个 AI / 智能体方向的项目，Browser automation CLI for AI agents。主语言 Rust，总 Star 51,331，本周新增 4,601。",
     "lang": "Rust",
-    "stars": 50846,
-    "week": 4360
+    "stars": 51331,
+    "week": 4601
   },
   {
-    "owner": "NVIDIA",
-    "name": "auto-ontology",
-    "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.。主语言 Python，总 Star 12,651，本周新增 4,108。",
-    "lang": "Python",
-    "stars": 12651,
-    "week": 4108
+    "owner": "google-deepmind",
+    "name": "mujoco",
+    "cat": "开发工具",
+    "desc": "这是一个开发工具项目，Multi-Joint dynamics with Contact. A general purpose physics simulator.。主语言 C++，总 Star 18,015，本周新增 1,859。",
+    "lang": "C++",
+    "stars": 18015,
+    "week": 1859
   },
   {
     "owner": "ZhuLinsen",
     "name": "daily_stock_analysis",
     "cat": "AI 智能体 & 编码",
-    "desc": "这是一个 AI / 智能体方向的项目，LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.。主语言 Python，总 Star 71,909，本周新增 3,778。",
+    "desc": "这是一个 AI / 智能体方向的项目，LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.。主语言 Python，总 Star 72,336，本周新增 4,526。",
     "lang": "Python",
-    "stars": 71909,
-    "week": 3778
+    "stars": 72336,
+    "week": 4526
+  },
+  {
+    "owner": "addyosmani",
+    "name": "agent-skills",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，Production-grade engineering skills for AI coding agents.。主语言 JavaScript，总 Star 117,685，本周新增 3,670。",
+    "lang": "JavaScript",
+    "stars": 117685,
+    "week": 3670
+  },
+  {
+    "owner": "anthropics",
+    "name": "claude-quickstarts",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API。主语言 Python，总 Star 21,013，本周新增 1,794。",
+    "lang": "Python",
+    "stars": 21013,
+    "week": 1794
+  },
+  {
+    "owner": "backnotprop",
+    "name": "plannotator",
+    "cat": "AI 智能体 & 编码",
+    "desc": "这是一个 AI / 智能体方向的项目，The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.。主语言 TypeScript，总 Star 11,405，本周新增 818。",
+    "lang": "TypeScript",
+    "stars": 11405,
+    "week": 818
   }
 ];
 const langColors = {"Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6", "Rust": "#dea584", "Go": "#00ADD8", "Java": "#b07219", "C++": "#f34b7d", "C": "#555555", "C#": "#178600", "Ruby": "#701516", "Swift": "#F05138", "Kotlin": "#A97BFF", "Dart": "#00B4AB", "Shell": "#89e051", "PowerShell": "#012456", "Jupyter Notebook": "#DA5B0B", "HTML": "#e34c26", "CSS": "#563d7c", "Vue": "#41b883", "Svelte": "#ff3e00", "PHP": "#4F5D95", "Scala": "#c22d40", "Lua": "#000080", "Zig": "#ec915c", "Elixir": "#6e4a7e", "Haskell": "#5e5086"};
